@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <style>
+       
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(-45deg, #ffecd2, yellow, skyblue, salmon);
+            background-size: 400% 400%;
+            animation: gradientShift 12s ease infinite;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Registration Card */
+        .register-container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 380px;
+            animation: slideUp 1s ease;
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Title */
+        h2 {
+            margin-bottom: 20px;
+            color: #444;
+            font-size: 26px;
+            letter-spacing: 1px;
+        }
+
+        /* Input Fields */
+        input[type="text"], input[type="password"], input[type="email"] {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus, 
+        input[type="password"]:focus, 
+        input[type="email"]:focus {
+            border-color: orange;
+            box-shadow: 0 0 8px rgba(255, 117, 140, 0.3);
+            outline: none;
+        }
+
+        /* Buttons */
+        .btn {
+            display: block;
+            width: 95%;
+            padding: 12px;
+            margin: 12px auto;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(90deg, gold, lightgreen);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.3s ease;
+        }
+        .btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 15px rgba(25, 117, 140, 0.4);
+            background: linear-gradient(90deg, #ff5, whitesmoke);
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h2>User Registration</h2>
+        <form action="Register" method="post">
+            <input type="text" name="username" placeholder="Enter Username" required><br>
+            <input type="password" name="password" placeholder="Enter Password" required><br>
+            <input type="email" name="email" placeholder="Enter Email" required><br>
+            <input type="submit" class="btn" value="Register">
+        </form>
+      
+        <a href="login.html" class="btn">Go to Login</a>
+    </div>
+</body>
+</html>
