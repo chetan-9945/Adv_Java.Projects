@@ -32,17 +32,17 @@ public class Login extends HttpServlet {
             if (user != null) {
                 HttpSession session = request.getSession();
                 session.setAttribute("user", user);
-                RequestDispatcher rd = request.getRequestDispatcher("welcome.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("/welcome.jsp");
                 rd.forward(request, response);
             } else {
                 request.setAttribute("errorMsg", "Invalid Username or Password!");
-                RequestDispatcher rd = request.getRequestDispatcher("loginRegister.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("/loginRegister.jsp");
                 rd.forward(request, response);
             }
         } catch (Exception e) {
             e.printStackTrace();
             request.setAttribute("errorMsg", "Something went wrong. Please try again.");
-            RequestDispatcher rd = request.getRequestDispatcher("loginRegister.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("/loginRegister.jsp");
             rd.forward(request, response);
         }
     }

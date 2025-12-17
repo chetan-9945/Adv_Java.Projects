@@ -31,7 +31,7 @@ public class UserDAO {
         return false;
     }
 
-    // ✅ Login validation
+    
     public UserAccount loginUser(String username, String password) {
         String sql = "SELECT NAME, MOBILE, USERNAME, EMAIL, PASSWORD FROM USERS WHERE USERNAME = ? AND PASSWORD = ?";
         try (Connection con = getConnection();
@@ -58,7 +58,7 @@ public class UserDAO {
     }
 
 
-    // ✅ Get all users
+    
     public List<UserAccount> getAllUsers() {
         List<UserAccount> list = new ArrayList<>();
         String sql = "SELECT * FROM USERS ORDER BY USERNAME";
@@ -82,7 +82,7 @@ public class UserDAO {
         return list;
     }
 
-    // ✅ Update user details
+    
     public boolean updateUser(UserAccount user) {
         String sql = "UPDATE USERS SET NAME=?, MOBILE=?, EMAIL=?, PASSWORD=? WHERE USERNAME=?";
         try (Connection con = getConnection();
@@ -103,7 +103,7 @@ public class UserDAO {
         return false;
     }
 
-    // ✅ Delete user
+    
     public boolean deleteUser(String username) {
         String sql = "DELETE FROM USERS WHERE USERNAME=?";
         try (Connection con = getConnection();
